@@ -20,7 +20,7 @@ router.post("/admin/permission/query", [
         return res.json({ errors: errors.mapped() })
     }
 
-    rpcIns.queryPermission(req.body["number"], req.body["pages"],(result,data,count) => {
+    rpcIns.queryPermission(req.body["pages"], req.body["number"],(result,data,count) => {
         console.log(result)
         if (result === 1) {
             res.json({ status: 1, message: data ,count:count})

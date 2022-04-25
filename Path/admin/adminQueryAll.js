@@ -21,7 +21,7 @@ router.post("/admin/query", [checkToken,
         res.json({status: -1, message: "Query fail"})
     } else {
 
-        rpcIns.queryAll(req.body["number"], req.body["pages"],(result, list,count) => {
+        rpcIns.queryAll(req.body["pages"], req.body["number"],(result, list,count) => {
             if (result === 1) {
                 res.json({status: 1, message: list , count:count})
             } else {
